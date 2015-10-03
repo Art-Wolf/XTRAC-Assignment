@@ -1,0 +1,33 @@
+{
+  "name": "xtrac-assignment",
+  "version": "1.0.0",
+  "description": "Assignment for the XTRAC req",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Art-Wolf/XTRAC-Assignment.git"
+  },
+  "keywords": [
+    "web",
+    "app"
+  ],
+  "author": "John Doyle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Art-Wolf/XTRAC-Assignment/issues"
+  },
+  "homepage": "https://github.com/Art-Wolf/XTRAC-Assignment#readme",
+  "devDependencies": {
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.10",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-cli": "^0.1.1",
+    "karma-jasmine": "^0.3.6"
+  }
+}
