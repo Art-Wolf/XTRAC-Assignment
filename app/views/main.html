@@ -2,8 +2,15 @@
   <h1>'Allo, 'Allo!</h1>
   <p class="lead">
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+    Always a pleasure scaffolding your apps."{{customers}}"
   </p>
+  <table>
+    <tr ng-repeat="customer in customers">
+      <td></td>
+      <td>Hey hey {{customer.id}}</a></td>
+      <td></td>
+    </tr>
+  </table>
   <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
