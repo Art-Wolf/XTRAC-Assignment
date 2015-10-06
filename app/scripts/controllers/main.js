@@ -14,9 +14,9 @@ angular.module('xtracAssignmentApp')
       console.log('all customers - ', $scope.customers.length);
     });
 
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.table = true;
+
+    $scope.toggleTable = function() {
+      $scope.table = $scope.table === false ? true: false;
+    };
   });
