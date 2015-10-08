@@ -9,5 +9,7 @@
  */
 angular.module('xtracAssignmentApp')
   .factory('ItemDetail', function($resource) {
-    return $resource("http://localhost:9092/itemdetail/:id");
+    return $resource("http://localhost:9092/itemdetail", {}, {
+      query: {method : "POST", isArray: true}
+    });
   });

@@ -8,7 +8,7 @@
  * Controller of the xtracAssignmentApp
  */
 angular.module('xtracAssignmentApp')
-  .controller('MainCtrl', function ($scope, $http, Customer, $base64, $location, User) {
+  .controller('PositionCtrl', function ($scope, $http, Item, $base64, $routeParams, User, $location) {
     $scope.User = User;
 
     $http.defaults.headers.common.Authorization = 'Basic ' + $base64.encode($scope.User.Username + ':' + $scope.User.Password);
@@ -18,15 +18,17 @@ angular.module('xtracAssignmentApp')
         url : 'http://localhost:9092',
         method : 'GET',
         headers : {
-            'X-Auth-Token' : token.token
+          'X-Auth-Token' : token.token
         }
       }).success(function(data) {
         $scope.greeting = data;
       });
     });
 
-    $scope.customers  = Customer.query(function() {
-      console.log('all customers - ', $scope.customers.length);
+    var queryParams = { account: $routeParams.accountNo };
+    Item.query(queryParams, {}, function (response) {
+      $scope.positions = response;
+      console.log('all positions - ', $scope.positions.length);
     });
 
     $scope.table = true;
@@ -35,7 +37,7 @@ angular.module('xtracAssignmentApp')
       $scope.table = $scope.table === false ? true: false;
     };
 
-    $scope.loadPositions=function(accountNo){
-      $location.path('position/'+accountNo);
+    $scope.loadSymbol=function(symbol){
+      $location.path('security/'+symbol);
     };
   });
